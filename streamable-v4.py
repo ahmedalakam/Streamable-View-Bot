@@ -21,7 +21,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 init()
-mouse = Controller()
 
 OSNAME = platform.system()
 
