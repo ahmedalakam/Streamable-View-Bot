@@ -1,57 +1,3 @@
-import random
-import os, sys
-import requests
-import win32api
-import keyboard
-import undetected_chromedriver as uc
-import colorama
-import threading
-from os import system, name
-from selenium import webdriver
-import contextlib
-from colorama import init, Fore
-from pynput.mouse import Button, Controller
-from time import strftime, gmtime, time, sleep
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
-
-
-## currently botting https://streamable.com/v05diu
-
-init()
-mouse = Controller()
-
-uc.TARGET_VERSION = major_version
-
-uc.install()
-
-def clear():
-
-    if name == 'nt':
-        _ = system('cls')
-
-    else:
-        _ = system('clear')
-
-clear()
-
-def logo():
-    os.system('cls') if os.name == 'nt' else os.system('clear')
-    print(f"""{Fore.RED}
-     ▄▄▄·  ▄· ▄▌▄▄▄▄▄▄• ▄▌     ▄▄· ▄▄▄   ▄· ▄▌ ▄▄▄·▄▄▄▄▄
-    ▐█ ▀█ ▐█▪██▌•██  █▪██▌    ▐█ ▌▪▀▄ █·▐█▪██▌▐█ ▄█•██
-    ▄█▀▀█ ▐█▌▐█▪ ▐█.▪█▌▐█▌ x  ██ ▄▄▐▀▀▄ ▐█▌▐█▪ ██▀· ▐█.▪
-    ▐█ ▪▐▌ ▐█▀·. ▐█▌·▐█▄█▌    ▐███▌▐█•█▌ ▐█▀·.▐█▪·• ▐█▌·
-     ▀  ▀   ▀ •  ▀▀▀  ▀▀▀     ·▀▀▀ .▀  ▀  ▀ • .▀    ▀▀▀
-    {Fore.GREEN}             Streamable Spammer By Aytu.\n
-    """+Fore.RESET)
-
-
 logo()
 print()
 for i in range(os.get_terminal_size().columns):
@@ -93,7 +39,7 @@ class AutoPlayF:
     def FAutoPlay(self):
         while True:
             if self.added >= self.amount:
-                os.system(Fore.Red"taskkill /F /IM chrome.exe")
+                os.system("taskkill /F /IM chrome.exe")
                 print(Fore.GREEN+"You Have Received The Requested Amount of Views!, Thank you for using Aytu Crypt.")
                 sleep(.6)
                 sys.exit()
@@ -109,10 +55,10 @@ class AutoPlayF:
             options.add_argument('--disable-gpu')
             opons = DesiredCapabilities.CHROME
             opons["pageLoadStrategy"] = "none"
-            sleep(.5)
+            sleep(1)
             driver = webdriver.Chrome(options=options,
                                 desired_capabilities=opons)
-            sleep(.4)
+            sleep(1)
             driver.get(link)
             timeout = 400
             try:
@@ -120,13 +66,13 @@ class AutoPlayF:
                 WebDriverWait(driver, timeout).until(element_present)
             finally:
                 driver.execute_script(watch_video_js)
-                sleep(.6) #1.5
+                sleep(1.5) #1.5
                 driver.refresh()
-                sleep(.3)
+                sleep(.5)
                 driver.refresh()
-                sleep(.3)
+                sleep(.5)
                 driver.refresh()
-                sleep(.8)
+                sleep(1)
                 self.added += 2
                 sleep(.5)
                 driver.quit()
