@@ -5,6 +5,7 @@ requests
 pywin32
 contextlib
 keyboard
+undetected_chromedriver
 colorama
 threading
 selenium
