@@ -1,5 +1,5 @@
 # Streamable-View-Bot
-Super. Fast Streamable. view bot using Python Selenium.
+Super. Fast. Streamable view bot using Python Selenium.
 
 * ## Requirements
  * Python 3.6+
