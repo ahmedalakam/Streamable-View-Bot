@@ -1,3 +1,79 @@
+import threading
+from os import system, name
+from selenium import webdriver
+import contextlib
+from colorama import init, Fore
+from pynput.mouse import Button, Controller
+from time import strftime, gmtime, time, sleep
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+
+
+## currently botting https://streamable.com/v05diu
+
+init()
+mouse = Controller()
+
+OSNAME = platform.system()
+
+"""
+Getting Chrome version code has been taken from
+https://github.com/yeongbin-jo/python-chromedriver-autoinstaller
+Thanks goes to him.
+"""
+if OSNAME == 'Linux':
+    OSNAME = 'lin'
+    with subprocess.Popen(['google-chrome', '--version'], stdout=subprocess.PIPE) as proc:
+        version = proc.stdout.read().decode('utf-8').replace('Google Chrome', '').strip()
+elif OSNAME == 'Darwin':
+    OSNAME = 'mac'
+    process = subprocess.Popen(
+        ['/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', '--version'], stdout=subprocess.PIPE)
+    version = process.communicate()[0].decode(
+        'UTF-8').replace('Google Chrome', '').strip()
+elif OSNAME == 'Windows':
+    OSNAME = 'win'
+    process = subprocess.Popen(
+        ['reg', 'query', 'HKEY_CURRENT_USER\\Software\\Google\\Chrome\\BLBeacon', '/v', 'version'],
+        stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, stdin=subprocess.DEVNULL
+    )
+    version = process.communicate()[0].decode('UTF-8').strip().split()[-1]
+else:
+    print('{} OS is not supported.'.format(OSNAME))
+    sys.exit()
+
+major_version = version.split('.')[0]
+
+uc.TARGET_VERSION = major_version
+
+uc.install()
+
+def clear():
+
+    if name == 'nt':
+        _ = system('cls')
+
+    else:
+        _ = system('clear')
+
+clear()
+
+def logo():
+    os.system('cls') if os.name == 'nt' else os.system('clear')
+    print(f"""{Fore.RED}
+     ▄▄▄·  ▄· ▄▌▄▄▄▄▄▄• ▄▌     ▄▄· ▄▄▄   ▄· ▄▌ ▄▄▄·▄▄▄▄▄
+    ▐█ ▀█ ▐█▪██▌•██  █▪██▌    ▐█ ▌▪▀▄ █·▐█▪██▌▐█ ▄█•██
+    ▄█▀▀█ ▐█▌▐█▪ ▐█.▪█▌▐█▌ x  ██ ▄▄▐▀▀▄ ▐█▌▐█▪ ██▀· ▐█.▪
+    ▐█ ▪▐▌ ▐█▀·. ▐█▌·▐█▄█▌    ▐███▌▐█•█▌ ▐█▀·.▐█▪·• ▐█▌·
+     ▀  ▀   ▀ •  ▀▀▀  ▀▀▀     ·▀▀▀ .▀  ▀  ▀ • .▀    ▀▀▀
+    {Fore.GREEN}             Streamable Spammer By Aytu.\n
+    """+Fore.RESET)
+
 logo()
 print()
 for i in range(os.get_terminal_size().columns):
