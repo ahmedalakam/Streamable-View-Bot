@@ -112,7 +112,7 @@ class AutoPlayF:
             print('─', end='')
         sleep(2.5)
         print(Fore.GREEN)
-        self.threadz = int(input('Enter the Amount of Threads (Recommended 10): '+Fore.RED))
+        self.threadz = int(input('Enter the Amount of Threads (Recommended 15): '+Fore.RED))
 
         if self.threadz == '':
            print('You Didnt Enter a Valid Thread Amount.')
