@@ -22,10 +22,6 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
-
-
-## currently botting https://streamable.com/v05diu
-
 init()
 mouse = Controller()
 
@@ -118,6 +114,19 @@ class AutoPlayF:
         for i in range(os.get_terminal_size().columns):
             print('─', end='')
         sleep(2)
+        print(Fore.GREEN)
+        self.threadz = int(input('Enter the Amount of Threads (Recommended 10): '+Fore.RED))
+
+        if self.threadz == '':
+           print('You Didnt Enter a Valid Thread Amount.')
+        sleep(1)
+        clear()
+        logo()
+        for i in range(os.get_terminal_size().columns):
+           print(Fore.RED + '─', end='')
+        print(Fore.GREEN+'Running Bot..')
+        for i in range(os.get_terminal_size().columns):
+           print(Fore.RED + '─', end='')
 
         self.added = 0
 
@@ -127,7 +136,7 @@ class AutoPlayF:
             if self.added >= self.amount:
                 os.system("taskkill /F /IM chrome.exe")
                 print(Fore.GREEN+"You Have Received The Requested Amount of Views!, Thank you for using Aytu Crypt.")
-                sleep(.6)
+                sleep(.3)
                 sys.exit()
             options = webdriver.ChromeOptions()
             options.add_argument("--log-level=OFF")
@@ -184,28 +193,12 @@ class AutoPlayF:
     def start(self):
         t2 = threading.Thread(target=self.start_title)
         t2.start()
-
-    def threadspeed(self):
-        t = threading.Thread(target=self.FAutoPlay)
-        t.start()
+        for _ in range(self.threadz):
+            while True:
+                if threading.active_count() <= 300:
+                    threading.Thread(target=self.FAutoPlay).start()
+                    break
 
 if __name__ == '__main__':
     main = AutoPlayF()
     main.start()
-
-print(Fore.GREEN)
-threadz = int(input('Enter the Amount of Threads (Recommended 10): '+Fore.RED))
-
-if threadz == '':
-    print('You Didnt Enter a Valid Thread Amount.')
-sleep(1)
-clear()
-logo()
-for i in range(os.get_terminal_size().columns):
-    print(Fore.RED + '─', end='')
-print(Fore.GREEN+'Running Bot..')
-for i in range(os.get_terminal_size().columns):
-    print(Fore.RED + '─', end='')
-
-for _ in range(threadz):
-    main.threadspeed()
