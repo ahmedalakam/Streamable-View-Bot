@@ -5,6 +5,7 @@ Super Fast Streamable view bot using Python Selenium.
  * Python 3.6+
  * High speed Internet Connection
  * Google Chrome installed on your OS (not Chromium)
+ *Chrome Driver Installs Automatically!*
 
 * ## Installation 
  
@@ -14,5 +15,5 @@ Super Fast Streamable view bot using Python Selenium.
 
   $ python3 streamable-v4.py
 
-  *Alternatively You Can Run 'Install.bat' & 'Launch.bat'
+  *Alternatively You Can Run 'Install.bat' & 'Launch.bat'*
   ```
