@@ -113,7 +113,7 @@ class AutoPlayF:
         print(Fore.RED)
         for i in range(os.get_terminal_size().columns):
             print('─', end='')
-        sleep(2)
+        sleep(2.5)
         print(Fore.GREEN)
         self.threadz = int(input('Enter the Amount of Threads (Recommended 10): '+Fore.RED))
 
@@ -133,11 +133,6 @@ class AutoPlayF:
 
     def FAutoPlay(self):
         while True:
-            if self.added >= self.amount:
-                os.system("taskkill /F /IM chrome.exe")
-                print(Fore.GREEN+"You Have Received The Requested Amount of Views!, Thank you for using Aytu Crypt.")
-                sleep(.3)
-                sys.exit()
             options = webdriver.ChromeOptions()
             options.add_argument("--log-level=OFF")
             options.add_argument("--headless")
@@ -172,7 +167,12 @@ class AutoPlayF:
                 sleep(.5)
                 driver.quit()
                 sleep(3)
-
+        if self.added >= self.amount:
+            os.system("taskkill /F /IM chrome.exe")
+            print(Fore.GREEN+"You Have Received The Requested Amount of Views!, Thank you for using Aytu Crypt.")
+            sleep(.3)
+            sys.exit()
+            
     def start_title(self):
 
         while self.added < self.amount:
@@ -181,7 +181,7 @@ class AutoPlayF:
             os.system(
                 f"title Aytu's Streamable ViewBot - Added: {self.added} Views/{self.amount} Views "
                 f'({round(((self.added / self.amount) * 100), 3)}%) ^| Active Threads: '
-                f'{threading.active_count() - 2} ^|'
+                f'{threading.active_count() - 2} ^| Botting: {link}'
             )
             sleep(0.2)
         os.system(
