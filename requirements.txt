@@ -1,0 +1,12 @@
+random
+os
+sys
+requests
+pywin32
+contextlib
+keyboard
+colorama
+threading
+selenium
+pynput
+time
