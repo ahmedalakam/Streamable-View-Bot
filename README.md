@@ -7,7 +7,7 @@ Super. Fast Streamable. view bot using Python Selenium.
  * Google Chrome installed on your OS (not Chromium)
  
  
-  #### *Chrome Driver Installs Automatically!*
+   #### *Chrome Driver Installs Automatically!*
 
 * ## Installation 
  
