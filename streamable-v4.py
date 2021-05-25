@@ -3,6 +3,7 @@ import os, sys
 import requests
 import win32api
 import keyboard
+import undetected_chromedriver as uc
 import colorama
 import threading
 from os import system, name
@@ -24,6 +25,10 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 init()
 mouse = Controller()
+
+uc.TARGET_VERSION = major_version
+
+uc.install()
 
 def clear():
 
