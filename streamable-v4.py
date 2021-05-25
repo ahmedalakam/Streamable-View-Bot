@@ -163,7 +163,7 @@ class AutoPlayF:
                 sleep(.5)
                 driver.refresh()
                 sleep(1)
-                self.added += 2
+                self.added += 1
                 sleep(.5)
                 driver.quit()
                 sleep(3)
