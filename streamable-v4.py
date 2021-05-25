@@ -1,3 +1,12 @@
+import random
+import os, sys
+import requests
+import win32api
+import keyboard
+import platform
+import subprocess
+import undetected_chromedriver as uc
+import colorama
 import threading
 from os import system, name
 from selenium import webdriver
@@ -12,6 +21,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+
 
 
 ## currently botting https://streamable.com/v05diu
