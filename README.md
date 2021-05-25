@@ -1,7 +1,7 @@
-* # Streamable-View-Bot
+# Streamable-View-Bot
 Super Fast Streamable view bot using Python Selenium.
 
-# Requirements
+* ## Requirements
  * Python 3.6+
  * High speed Internet Connection
  * Google Chrome installed on your OS (not Chromium)
@@ -9,7 +9,7 @@ Super Fast Streamable view bot using Python Selenium.
  
    #### *Chrome Driver Installs Automatically!*
 
-* # Installation 
+* ## Installation 
  
   Open command prompt and type
   ```bash
@@ -20,5 +20,5 @@ Super Fast Streamable view bot using Python Selenium.
   *Alternatively You Can Run 'Install.bat' & 'Launch.bat'*
   ```
 
-* # Bot
+* ## Bot
 ![BOT](https://cdn.discordapp.com/attachments/827336938440491018/846837030938869790/Screenshot202021-05-2520124404.png)
