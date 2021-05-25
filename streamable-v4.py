@@ -2,17 +2,15 @@ import random
 import os, sys
 import requests
 import win32api
-import keyboard
 import platform
 import subprocess
 import undetected_chromedriver as uc
 import colorama
 import threading
+import contextlib
 from os import system, name
 from selenium import webdriver
-import contextlib
 from colorama import init, Fore
-from pynput.mouse import Button, Controller
 from time import strftime, gmtime, time, sleep
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
