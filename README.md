@@ -21,4 +21,4 @@ Super. Fast. Streamable View bot using Python Selenium.
   ```
 
 * ## Bot
-![BOT](https://cdn.discordapp.com/attachments/827336938440491018/846837030938869790/Screenshot202021-05-2520124404.png)
+![BOT](https://cdn.discordapp.com/attachments/861851305441361920/876226388531744818/unknown.png)
